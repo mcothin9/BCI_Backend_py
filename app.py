@@ -9,7 +9,10 @@ CORS(app)
 
 @app.route('/probs', methods=['GET'])
 def get_probs():
+    print('App start...')
+    # logging.basicConfig('After read file')
     probs = predict_eeg_events()
+    print('Get probs')
     # Convert the numpy array to a Python list and wrap it in a dictionary
     probs_list = probs.tolist()
     response = {'probs': probs_list}
