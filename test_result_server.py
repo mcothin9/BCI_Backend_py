@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 
 def predict_eeg_events():
     print('Before import')
-    logging.basicConfig('Before import')
+    # logging.basicConfig('Before import')
 
     import os
     import mne
@@ -25,7 +25,7 @@ def predict_eeg_events():
     from tensorflow.keras import backend as K
 
     print('After import')
-    logging.basicConfig('After import')
+    # logging.basicConfig('After import')
 
     json_file_path = os.path.expanduser('~/Desktop/Workspace/BCI/model_EEGNet.json')
     weights_file_path = os.path.expanduser('~/Desktop/Workspace/BCI/model_EEGNet.h5')
@@ -35,7 +35,7 @@ def predict_eeg_events():
         loaded_model_json = json_file.read()
 
     print('After read file')
-    logging.basicConfig('After read file')
+    # logging.basicConfig('After read file')
 
     model = model_from_json(loaded_model_json)
     model.load_weights(weights_file_path)
@@ -53,13 +53,13 @@ def predict_eeg_events():
     preprocessed_data = epochs.get_data() * 1000
 
     print('After modelling')
-    logging.basicConfig('After modelling')
+    # logging.basicConfig('After modelling')
 
     # make prediction with model
     probs = model.predict(preprocessed_data)
     preds = probs.argmax(axis=-1)
 
     print('After predict')
-    logging.basicConfig('After predict')
+    # logging.basicConfig('After predict')
 
     return probs
