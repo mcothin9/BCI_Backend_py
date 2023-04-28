@@ -8,6 +8,7 @@ CORS(app)
 
 print('test print')
 
+
 @app.route('/probs', methods=['GET'])
 def get_probs():
     print('App start...')
@@ -22,4 +23,4 @@ def get_probs():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5000)
