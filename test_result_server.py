@@ -1,18 +1,3 @@
-import logging
-
-from flask import Flask, jsonify, request
-import json
-import numpy as np
-import mne
-from mne import io
-from mne.datasets import sample
-import tensorflow as tf
-from tensorflow.keras import utils as np_utils
-from tensorflow.keras.callbacks import ModelCheckpoint
-from tensorflow.keras import backend as K
-from tensorflow.keras.models import load_model
-from tensorflow.keras.models import model_from_json
-import matplotlib.pyplot as plt
 
 def predict_eeg_events():
     print('Before import')
