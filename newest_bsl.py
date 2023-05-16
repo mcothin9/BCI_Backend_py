@@ -73,7 +73,7 @@ def predict_eeg(stream_name):
             scaler = StandardScaler()
             scaler.fit(data)
             data_scaled = scaler.transform(data)
-            data = data_scaled / 100
+            data = data_scaled / 540
             X = data.reshape(1, len(desired_channels), 251)
             X_together.append(X[0])
             idx_last_plot += 1
