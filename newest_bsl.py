@@ -66,7 +66,7 @@ def predict_eeg(stream_name):
     X_together = []  # Initialize an empty list to store multiple trials
 
     start_time = time.time()
-    while timer.sec() <= 10:
+    while timer.sec() <= 10: # TODO: Set time interval of data segment
         buffer.update()
         if timer.sec() // 1 == idx_last_plot:
             data = buffer.data
